@@ -8,7 +8,9 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class HelloApplication extends Application {
     @Override
@@ -18,7 +20,13 @@ public class HelloApplication extends Application {
 
         final WebEngine webEngine = webView.getEngine();
 
-        webEngine.load("http://www.oracle.com");
+        File f = new File("index.html");
+        webEngine.load(f.toURI().toString());
+
+        //URL url = this.getClass().getResource("index.html");
+        //webEngine.load(url.toString());
+
+        //webEngine.load("../index.html");
 
         // Create the VBox
         VBox root = new VBox();
