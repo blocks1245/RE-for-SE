@@ -1,5 +1,6 @@
 package com.example.reforseprototype;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,9 +18,17 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
         String componentToOpen = "main-view";
         String windowTitle = "main view";
-        boolean openInNewWindow = true;
+        boolean openInNewWindow = false;
         int width = 800;
         int height = 600;
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml"));
+//
+//        Stage stage = new Stage();
+//        Scene scene = new Scene(fxmlLoader.load());
+//        stage.setScene(scene);
+//        stage.show();
+
 
         Stage stage;
         if (openInNewWindow) {

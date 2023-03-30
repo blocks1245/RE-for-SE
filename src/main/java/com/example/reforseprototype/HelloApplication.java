@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class HelloApplication extends Application {
     @Override
@@ -17,12 +18,14 @@ public class HelloApplication extends Application {
 
         stage.setTitle("Hello!");
 
-        MenuBar menuBar = new MenuBar();
-        VBox vBox = new VBox(menuBar);
-        Scene scene = new Scene(vBox, 300, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 300);
 
-        Menu menu1 = new Menu("Menu 1");
-        menuBar.getMenus().add(menu1);
+        WebView webView = new WebView();
+
+        WebView browser = new WebView();
+        WebEngine webEngine = browser.getEngine();
+        URL url = this.getClass().getResource("/com/cds/gui/webView/main.html");
+        webEngine.load(url.toString());
 
         stage.setScene(scene);
         stage.show();
