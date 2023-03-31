@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
 
         final WebEngine webEngine = webView.getEngine();
 
-        File f = new File("index.html");
+        File f = new File("website/index.html");
         webEngine.load(f.toURI().toString());
 
         //URL url = this.getClass().getResource("index.html");
