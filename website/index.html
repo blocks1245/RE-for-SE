@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mainstyle.css">
+    <link rel="code" href="login.js">
     
     <title>Document</title>
 </head>
@@ -16,13 +17,8 @@
 
   </div>
 
-    <!-- 
-    Added onsubmit attribute to form so that it will trigger the JS function (authenticate). 
-    if the function returns false it will prevent the form from submitting 
--->
 <form action="helloWorld.html" onsubmit="return authenticate()">
     <label for="username">Username</label>
-    <!-- added IDs to the inputs -->
     <input
       id="username"
       type="text"
@@ -43,29 +39,5 @@
     </div>
     <button type="submit">Submit</button>
   </form>
-
-  
-  <script>
-  
-  //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password 
-    function authenticate(){
-      var authorised;
-      
-      //get input values
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      
-      //check to see if the password and username match
-      if(username.toLowerCase() == "sander" && password == "1234"){
-        authorised = true;
-      }else{ // username or password do not match
-        authorised = false;
-
-        document.getElementById("incorrectPass").style.visibility = "visible";
-      }
-      //return result
-      return authorised;
-    }
-  </script>    
 </body>
 </html>

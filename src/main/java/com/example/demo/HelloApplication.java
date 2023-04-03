@@ -36,6 +36,9 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root);
         // Add  the Scene to the Stage
         stage.setScene(scene);
+
+        stage.setResizable(false);
+
         // Display the Stage
         stage.show();
 
