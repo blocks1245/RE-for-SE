@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="invoiceStyle.css">
 </head>
 <body>
+	<a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
 	<h1>Nieuwe offerte</h1>
 	<div class="invoice-box">
 		<table cellpadding="0" cellspacing="0">
@@ -16,7 +17,7 @@
                                 <img src="logo.png" alt="logo" style="width: 200px;">
 							</td>
 							<td>
-								Date: <input type="date" id="invoice-date">
+								Date: <input type="date" id="invoice-date" placeholder="dd-mm-yyyy">
 							</td>
 						</tr>
 					</table>
@@ -59,21 +60,22 @@
 			<tr class="item">
 				<td>
 					<label for="solar-pannel">Kies een paneel soort:</label>
-                    <select name="solar-pannel" id="solar-pannel">
-                        <option value="sunBurn">SunBurn Factor 50 (405wp)</option>
+                    <select name="solar-pannel" id="solar-pannel" onchange="solarSelect()">
+                        <option value="select">(select)</option>
+						<option value="sunBurn">SunBurn Factor 50 (405wp)</option>
                     </select>
 				</td>
 				<td>
-					<input type="text" id="item-price" placeholder="Price">
+					<p id="item-price">Selecteer paneel</p>
 				</td>
 			</tr>
 			
 			<tr class="item">
 				<td>
-					<input type="text" id="item-name" placeholder="Item name">
+					<label for="panel-amount">Hoeveelheid panelen:</label>
 				</td>
 				<td>
-					<input type="text" id="item-price" placeholder="Price">
+					<input type="number" id="panel-amount" placeholder="Hoeveelheid">
 				</td>
 			</tr>
 			

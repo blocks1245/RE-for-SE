@@ -53,3 +53,11 @@ const generateInvoice = () => {
     }, 1000);
   };
   
+
+function solarSelect() {
+  if (document.getElementById("solar-pannel").value == "sunBurn") {
+    document.getElementById("item-price").innerHTML = "&euro; 200";
+  } else if (document.getElementById("solar-pannel").value == "select") {
+    document.getElementById("item-price").innerHTML = "Selecteer paneel";
+  }
+}

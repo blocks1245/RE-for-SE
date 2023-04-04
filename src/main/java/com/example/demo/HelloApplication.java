@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -22,6 +23,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        StackPane root = new StackPane();
+
         WebView webView = new WebView();
 
         final WebEngine webEngine = webView.getEngine();
@@ -29,14 +32,8 @@ public class HelloApplication extends Application {
         File f = new File("website/index.html");
         webEngine.load(f.toURI().toString());
 
-        //URL url = this.getClass().getResource("index.html");
-        //webEngine.load(url.toString());
+        //VBox root = new VBox();
 
-        //webEngine.load("../index.html");
-
-        // Create the VBox
-        VBox root = new VBox();
-        // Add the WebView to the VBox
         root.getChildren().add(webView);
 
         // Create the Scene
@@ -44,7 +41,8 @@ public class HelloApplication extends Application {
         // Add  the Scene to the Stage
         stage.setScene(scene);
 
-        stage.setResizable(false);
+        stage.setResizable(true);
+        stage.setTitle("software prototype");
 
         // Display the Stage
         stage.show();

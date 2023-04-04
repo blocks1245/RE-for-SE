@@ -80,7 +80,7 @@ li img {
 }
  
 li a:hover {
-  opacity: 60%;
+    filter: invert(50%)
 }
 
 .caption {
