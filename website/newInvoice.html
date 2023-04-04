@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invoice Generator</title>
+	<link rel="stylesheet" href="invoiceStyle.css">
+</head>
+<body>
+	<h1>Nieuwe offerte</h1>
+	<div class="invoice-box">
+		<table cellpadding="0" cellspacing="0">
+			<tr class="top">
+				<td colspan="2">
+					<table>
+						<tr>
+							<td class="title">
+                                <img src="logo.png" alt="logo" style="width: 200px;">
+							</td>
+							<td>
+								Date: <input type="date" id="invoice-date">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+			<tr class="information">
+				<td colspan="2">
+					<table>
+						<tr>
+							<td>
+								ECRC<br>
+								burgemeesterstraat 22<br>
+								5678CD Vendingen<br>
+								info@ecrc.nl
+							</td>
+							<td>
+								Billed To:<br>
+								<input type="text" id="billed-to-name" placeholder="Name"><br>
+								<input type="text" id="billed-to-address" placeholder="Address"><br>
+								<input type="text" id="billed-to-city" placeholder="City"><br>
+								<input type="text" id="billed-to-state" placeholder="State"><br>
+								<input type="text" id="billed-to-zip" placeholder="ZIP"><br>
+								<input type="text" id="billed-to-email" placeholder="Email"><br>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+			<tr class="heading">
+				<td>
+					Item
+				</td>
+				<td>
+					Price
+				</td>
+			</tr>
+			
+			<tr class="item">
+				<td>
+					<label for="solar-pannel">Kies een paneel soort:</label>
+                    <select name="solar-pannel" id="solar-pannel">
+                        <option value="sunBurn">SunBurn Factor 50 (405wp)</option>
+                    </select>
+				</td>
+				<td>
+					<input type="text" id="item-price" placeholder="Price">
+				</td>
+			</tr>
+			
+			<tr class="item">
+				<td>
+					<input type="text" id="item-name" placeholder="Item name">
+				</td>
+				<td>
+					<input type="text" id="item-price" placeholder="Price">
+				</td>
+			</tr>
+			
+			<tr class="item last">
+				<td>
+					<input type="text" id="item-name" placeholder="Item name">
+				</td>
+				<td>
+					<input type="text" id="item-price" placeholder="Price">
+				</td>
+			</tr>
+			
+			<tr class="total">
+				<td></td>
+				<td>
+				   Total: <span id="total"></span>
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+    <button id="preview-btn" onclick="previewInvoice()">Preview</button>
+    <button id="pdf-btn" onclick="generatePdf()">Download PDF</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+	<script src="invoice.js"></script>
+</body>
+</html>

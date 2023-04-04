@@ -1,14 +1,10 @@
   //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password 
-var name;
-
   function authenticate(){
   var authorised;
     
   //get input values
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-
-  name = username;
 
   //check to see if the password and username match
   if(username.toLowerCase() == "sander" && password == "1234"){
