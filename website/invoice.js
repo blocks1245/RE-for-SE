@@ -61,3 +61,19 @@ function solarSelect() {
     document.getElementById("item-price").innerHTML = "Selecteer paneel";
   }
 }
+
+function omvormerSelect() {
+  if (document.getElementById("omvormer").value == "select") {
+    document.getElementById("omvormer-price").innerHTML = "Selecteer paneel";
+  } else if (document.getElementById("omvormer").value == "2000") {
+    document.getElementById("omvormer-price").innerHTML = "&euro; 400";
+  } else if (document.getElementById("omvormer").value == "5000") {
+    document.getElementById("omvormer-price").innerHTML = "&euro; 600";
+  } else if (document.getElementById("omvormer").value == "6000") {
+    document.getElementById("omvormer-price").innerHTML = "&euro; 800";
+  } else if (document.getElementById("omvormer").value == "8000") {
+    document.getElementById("omvormer-price").innerHTML = "&euro; 1000";
+  } else if (document.getElementById("omvormer").value == "12000") {
+    document.getElementById("omvormer-price").innerHTML = "&euro; 1500";
+  } 
+}

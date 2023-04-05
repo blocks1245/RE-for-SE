@@ -78,6 +78,21 @@
 					<input type="number" id="panel-amount" placeholder="Hoeveelheid">
 				</td>
 			</tr>
+
+			<td>
+				<label for="solar-pannel">Kies een omvormer soort:</label>
+				<select name="omvormer" id="omvormer" onchange="omvormerSelect()">
+					<option value="select">(select)</option>
+					<option value="2000">SB2000</option>
+					<option value="5000">SB5000</option>
+					<option value="6000">SB6000</option>
+					<option value="8000">SB8000</option>
+					<option value="12000">SB12000</option>
+				</select>
+			</td>
+			<td>
+				<p id="omvormer-price">Selecteer omvormer</p>
+			</td>
 			
 			<tr class="item last">
 				<td>
