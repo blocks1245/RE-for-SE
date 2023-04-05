@@ -59,54 +59,75 @@
 			
 			<tr class="item">
 				<td>
-					<label for="solar-pannel">Kies een paneel soort:</label>
+					<label for="solar-pannel">Paneel soort </label>
                     <select name="solar-pannel" id="solar-pannel" onchange="solarSelect()">
                         <option value="select">(select)</option>
 						<option value="sunBurn">SunBurn Factor 50 (405wp)</option>
                     </select>
 				</td>
 				<td>
-					<p id="item-price">Selecteer paneel</p>
+					<p id="item-price"></p>
 				</td>
 			</tr>
 			
 			<tr class="item">
 				<td>
-					<label for="panel-amount">Hoeveelheid panelen:</label>
+					<label for="panel-amount">Hoeveelheid panelen</label>
 				</td>
 				<td>
-					<input type="number" id="panel-amount" placeholder="Hoeveelheid">
+					<input type="number" id="panel-amount" placeholder="Hoeveelheid" min="1" onchange="materialPP()">
 				</td>
 			</tr>
 
-			<td>
-				<label for="solar-pannel">Kies een omvormer soort:</label>
-				<select name="omvormer" id="omvormer" onchange="omvormerSelect()">
-					<option value="select">(select)</option>
-					<option value="2000">SB2000</option>
-					<option value="5000">SB5000</option>
-					<option value="6000">SB6000</option>
-					<option value="8000">SB8000</option>
-					<option value="12000">SB12000</option>
-				</select>
-			</td>
-			<td>
-				<p id="omvormer-price">Selecteer omvormer</p>
-			</td>
-			
-			<tr class="item last">
+			<tr class="item">
 				<td>
-					<input type="text" id="item-name" placeholder="Item name">
+					<label for="solar-pannel">Omvormer </label>
+					<select name="omvormer" id="omvormer" onchange="omvormerSelect()">
+						<option value="select">(select)</option>
+						<option value="2000">SB2000</option>
+						<option value="5000">SB5000</option>
+						<option value="6000">SB6000</option>
+						<option value="8000">SB8000</option>
+						<option value="12000">SB12000</option>
+					</select>
+				</td>
+			
+				<td>
+					<p id="omvormer-price"></p>
+				</td>
+			</tr>
+
+			<tr class="item">
+				<td>
+					<p>Instalatiemateriaal vast</p>
 				</td>
 				<td>
-					<input type="text" id="item-price" placeholder="Price">
+					<p id="materiaal-vast">1000</p>
+				</td>
+			</tr>
+
+			<tr class="item">
+				<td>
+					<p>Instalatiemateriaal per paneel</p>
+				</td>
+				<td>
+					<p id="material-pp"></p>
+				</td>
+			</tr>
+
+			<tr class="item last">
+				<td>
+					<label for="3-phase"><input type="checkbox" id="3-phase" onchange="to3Phase(this)"> Aanpassing meterkast</label>
+				</td>
+				<td>
+					<p id="3-phase-price">0</p>
 				</td>
 			</tr>
 			
 			<tr class="total">
 				<td></td>
 				<td>
-				   Total: <span id="total"></span>
+				   Total: &euro;<span id="total"></span>
 				</td>
 			</tr>
 			

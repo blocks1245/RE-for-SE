@@ -24,8 +24,6 @@ public class HelloApplication extends Application {
         File f = new File("website/index.html");
         webEngine.load(f.toURI().toString());
 
-        //VBox root = new VBox();
-
         root.getChildren().add(webView);
 
         // Create the Scene
