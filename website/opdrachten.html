@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Session Storage Data Viewer</title>
+    <link rel="stylesheet" href="opdrachten.css">
+</head>
+<body>
+    <a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
+	<h1>Session Storage Data Viewer</h1>
+	
+    <div class="data-box">
+        <table cellpadding="0" cellspacing="0">
+            <ul id="data"></ul>
+        </table>
+    </div>
+
+	<script>
+		// Retrieve data from session storage
+		let storedData = sessionStorage.getItem(sessionStorage.length-1);
+
+		// Split the data into an array of items
+		let items = [];
+		if (storedData) {
+			items = storedData.split(",");
+		}
+
+		// Display the items on the page in a list
+		let listItems = "";
+		for (let i = 0; i < Math.min(items.length, 10); i++) {
+			listItems += "<li>" + items[i] + "</li>";
+		}
+		if (listItems !== "") {
+			document.getElementById("data").innerHTML = listItems;
+		} else {
+			document.getElementById("data").innerHTML = "<p>No data found in session storage.</p>";
+		}
+	</script>
+</body>
+</html>
+
