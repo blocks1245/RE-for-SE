@@ -17,17 +17,31 @@
 		<input type="number" id="length" name="length" required><br><br>
 		
 
-		<button type="button" onclick="calculate()">Calculate</button><br><br>
+		<button type="button" onclick="calculateAmount()">Calculate</button><br><br>
 		
-		<label for="result">Maximum Number of Solar Panels:</label>
-		<input type="text" id="result" name="result" readonly>
+		<label for="resultAmount">Maximum Number of Solar Panels:</label>
+		<input type="text" id="resultAmount" name="result" readonly>
 	</form>
 
     <form>
         <h1>Calculate wattage</h1>
 
-        <label for="pannel-amount">Amount of pannels:</label>
-        <input type="number" name="pannel-amount" id="pannel-amount">
+        <label for="panel-type">Select pannel used: </label>
+        <select name="panel-type" id="panel-type">
+            <option value="select">(select)</option>
+            <option value="sunBurn">SunBurn Factor 50 (405wp)</option>
+        </select><br><br>
+
+        <label for="pannel-amount">Amount of pannels: </label>
+        <input type="number" name="pannel-amount" id="pannel-amount"><br><br>
+
+        <label for="coverage-persentage">Coverage persentage: </label>
+        <input type="number" name="coverage-persentage" id="coverage-persentage" min="0" max="100"><br><br>
+
+        <button type="button" onclick="calculateWattage()">Calculate</button><br><br>
+        
+        <label for="resultWattage">Wattage estimate: </label>
+		<input type="text" id="resultWattage" name="result" readonly>
     </form>
 
     <script src="tools.js"></script>
