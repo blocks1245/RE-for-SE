@@ -1,40 +1,174 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Session Storage Data Viewer</title>
-    <link rel="stylesheet" href="opdrachten.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>Session Storage Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .storage-keys {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .storage-values {
+        flex: 2;
+        margin-left: 20px;
+      }
+
+      .storage-keys select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .storage-values pre {
+        white-space: pre-wrap;
+        font-size: 16px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      label, p {
+        display: inline-block;
+        margin: 5px 10px;
+      }
+
+	  .button {
+		display: block;
+		margin: 30px auto;
+		padding: 10px 20px;
+		font-size: 16px;
+		background: #4CAF50;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .storage-keys,
+        .storage-values {
+          margin: 0;
+          width: 100%;
+        }
+
+        .storage-keys select {
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center
+        }
+      }
+    </style>
+  </head>
+  <body>
     <a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
-	<h1>Session Storage Data Viewer</h1>
-	
-    <div class="data-box">
-        <table cellpadding="0" cellspacing="0">
-            <ul id="data"></ul>
+    <h1>Session Storage Viewer</h1>
+    <div class="container">
+      <div class="storage-keys" style="display:block;">
+        <label for="session-keys">Session Storage Keys:</label>
+        <select id="session-keys" size="20" onchange="displayValue()"></select>
+      </div>
+      <div class="storage-values">
+        <label for="session-values" style="font-weight: bold">Session Storage Value:</label>
+
+        <table>
+          <tr>
+            <td><label for="name">Naam:</label></td>
+            <td><p id="name"></p></td>
+          </tr>
+          <tr>
+            <td><label for="date">Date:</label></td>
+            <td><p id="date"></p></td>
+          </tr>
+          <tr>
+            <td><label for="address">Address:</label></td>
+            <td><p id="address"></p></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td><p id="email"></p></td>
+          </tr>
+          <tr>
+            <td><label for="panelSort">Panel sort:</label></td>
+            <td><p id="panelSort"></p></td>
+          </tr>
+          <tr>
+            <td><label for="amount">Amount:</label></td>
+            <td><p id="amount"></p></td>
+          </tr>
+          <tr>
+            <td><label for="omvormer">Omvormer:</label></td>
+            <td><p id="omvormer"></p></td>
+          </tr>
+          <tr>
+            <td><label for="aanpassingMeterkast">Aanpassing Meterkast:</label></td>
+            <td><p id="aanpassingMeterkast"></p></td>
+          </tr>
+          <tr>
+            <td><label for="team">Team:</label></td>
+            <td><p id="team"></p></td>
+          </tr>
         </table>
+
+		<button class="button">Print</button>
+      
+
+      </div>
     </div>
+    <script>
+      function generateMenu() {
+        var menu = document.getElementById("session-keys");
+        for (var i = 0; i < sessionStorage.length; i++) {
+          var key = sessionStorage.key(i);
+          var option = document.createElement("option");
+          option.value = key;
+          option.text = key;
+          menu.appendChild(option);
+        }
+      }
 
-	<script>
-		// Retrieve data from session storage
-		let storedData = sessionStorage.getItem(sessionStorage.length-1);
+      function displayValue() {
+        var key = document.getElementById("session-keys").value;
+        var value = JSON.parse(sessionStorage.getItem(key));
 
-		// Split the data into an array of items
-		let items = [];
-		if (storedData) {
-			items = storedData.split(",");
-		}
+        document.getElementById("name").innerHTML = value[0];
+        document.getElementById("date").innerHTML = value[1];
+        document.getElementById("address").innerHTML = value[2];
+        document.getElementById("email").innerHTML = value[3];
+        document.getElementById("panelSort").innerHTML = value[4];
+        document.getElementById("amount").innerHTML = value[5];
+        document.getElementById("omvormer").innerHTML = value[6];
+        document.getElementById("aanpassingMeterkast").innerHTML = value[7];
+        document.getElementById("team").innerHTML = value[8];
+      }
 
-		// Display the items on the page in a list
-		let listItems = "";
-		for (let i = 0; i < Math.min(items.length, 10); i++) {
-			listItems += "<li>" + items[i] + "</li>";
-		}
-		if (listItems !== "") {
-			document.getElementById("data").innerHTML = listItems;
-		} else {
-			document.getElementById("data").innerHTML = "<p>No data found in session storage.</p>";
-		}
-	</script>
-</body>
+      generateMenu();
+      displayValue();
+      document.getElementById("session-keys").addEventListener("change", displayValue);
+    </script>
+  </body>
 </html>
-

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop Example</title>
+    <link rel="stylesheet" href="team.css">
+  </head>
+  <body>
+    <a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
+    <h1>Team editor</h1>
+    <div class="container">
+        
+        <div class="drop-zone" ondrop="saveOrder(event)">
+            <label for="drop-zone">Team 1</label>
+            <div class="item" draggable="true" id="item1" ondragstart="drag(event)">Jan</div>
+            <div class="item" draggable="true" id="item2" ondragstart="drag(event)">Piet</div>
+        </div>
+        
+        <div class="drop-zone" ondrop="saveOrder(event)">
+            <label for="drop-zone">Team 2</label>
+            <div class="item" draggable="true" id="item3" ondragstart="drag(event)">Henk</div>
+            <div class="item" draggable="true" id="item4" ondragstart="drag(event)">Archibald</div>
+        </div>
+        
+        <div class="drop-zone" ondrop="saveOrder(event)">
+            <label for="drop-zone">Team 3</label>
+            <div class="item" draggable="true" id="item5" ondragstart="drag(event)">Josef</div>
+            <div class="item" draggable="true" id="item6" ondragstart="drag(event)">ChatGPT</div>
+        </div>
+    </div>
+    
+    <script src="team.js"></script>
+  </body>
+</html>

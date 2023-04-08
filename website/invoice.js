@@ -55,7 +55,7 @@ var data = [];
 function fillData() {
   //clear the last data
   data = [];
-  //make oe adress line
+  //make the adress line
   var adress = (document.getElementById("billed-to-address").value + " " + document.getElementById("billed-to-zip").value + " " + document.getElementById("billed-to-city").value);
   
   data.push(document.getElementById("billed-to-name").value);
@@ -72,5 +72,6 @@ function fillData() {
 
 function save() {
   fillData();
-  sessionStorage.setItem(sessionStorage.length, data);
+  sessionStorage.setItem(sessionStorage.length, JSON.stringify(data));
+  window.location.href='helloWorld.html';
 }
