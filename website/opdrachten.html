@@ -86,14 +86,14 @@
   </head>
   <body>
     <a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
-    <h1>Session Storage Viewer</h1>
+    <h1>Opdrachten</h1>
     <div class="container">
       <div class="storage-keys" style="display:block;">
-        <label for="session-keys">Session Storage Keys:</label>
+        <label for="session-keys">Lijst met opdrachten:</label>
         <select id="session-keys" size="20" onchange="displayValue()"></select>
       </div>
       <div class="storage-values">
-        <label for="session-values" style="font-weight: bold">Session Storage Value:</label>
+        <label for="session-values" style="font-weight: bold">Opdracht gegevens:</label>
 
         <table>
           <tr>
@@ -101,11 +101,11 @@
             <td><p id="name"></p></td>
           </tr>
           <tr>
-            <td><label for="date">Date:</label></td>
+            <td><label for="date">Datum:</label></td>
             <td><p id="date"></p></td>
           </tr>
           <tr>
-            <td><label for="address">Address:</label></td>
+            <td><label for="address">Adres:</label></td>
             <td><p id="address"></p></td>
           </tr>
           <tr>
@@ -113,11 +113,11 @@
             <td><p id="email"></p></td>
           </tr>
           <tr>
-            <td><label for="panelSort">Panel sort:</label></td>
+            <td><label for="panelSort">Paneel soort:</label></td>
             <td><p id="panelSort"></p></td>
           </tr>
           <tr>
-            <td><label for="amount">Amount:</label></td>
+            <td><label for="amount">Hoeveelheid:</label></td>
             <td><p id="amount"></p></td>
           </tr>
           <tr>
@@ -146,7 +146,7 @@
           var key = sessionStorage.key(i);
           var option = document.createElement("option");
           option.value = key;
-          option.text = key;
+          option.text = JSON.parse(sessionStorage.getItem(key))[1];
           menu.appendChild(option);
         }
       }

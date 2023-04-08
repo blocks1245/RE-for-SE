@@ -65,13 +65,17 @@ function fillData() {
   data.push(document.getElementById("solar-pannel").value);
   data.push(document.getElementById("panel-amount").value);
   data.push("SB" + document.getElementById("omvormer").value);
-  data.push(document.getElementById("3-phase").value);
+  data.push(document.getElementById("3-phase").checked);
   data.push("NuLL");
 }
 
 
 function save() {
-  fillData();
-  sessionStorage.setItem(sessionStorage.length, JSON.stringify(data));
-  window.location.href='helloWorld.html';
+  if (document.getElementById("invoice-date").value.length < 10) {
+    document.getElementById("notFilled").style.visibility = "visible";
+  } else {
+    fillData();
+    sessionStorage.setItem(sessionStorage.length, JSON.stringify(data));
+    window.location.href='helloWorld.html';
+  }
 }

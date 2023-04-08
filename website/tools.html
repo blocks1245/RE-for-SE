@@ -8,39 +8,39 @@
     <a href="helloWorld.html"><img src="../website icons/svg/arrow-left.svg" alt="back"></a>
 	<h1>Tools</h1>
 	<form>
-        <h1>pannel amount</h1>
+        <h1>Paneel hoeveelheid</h1>
 
-		<label for="width">Roof Width (in cm): </label>
+		<label for="width">Dak breedte (in cm): </label>
 		<input type="number" id="width" name="width" required><br><br>
 		
-		<label for="length">Roof Length (in cm): </label>
+		<label for="length">Dak Length (in cm): </label>
 		<input type="number" id="length" name="length" required><br><br>
 		
 
-		<button type="button" onclick="calculateAmount()">Calculate</button><br><br>
+		<button type="button" onclick="calculateAmount()">Bereken</button><br><br>
 		
-		<label for="resultAmount">Maximum Number of Solar Panels:</label>
+		<label for="resultAmount">Maximale hoeveelheid panelen:</label>
 		<input type="text" id="resultAmount" name="result" readonly>
 	</form>
 
     <form>
-        <h1>Calculate wattage</h1>
+        <h1>Bereken wattage</h1>
 
-        <label for="panel-type">Select pannel used: </label>
+        <label for="panel-type">Selecteer paneel: </label>
         <select name="panel-type" id="panel-type">
             <option value="select">(select)</option>
             <option value="sunBurn">SunBurn Factor 50 (405wp)</option>
         </select><br><br>
 
-        <label for="pannel-amount">Amount of pannels: </label>
+        <label for="pannel-amount">Hoeveelheid panelen: </label>
         <input type="number" name="pannel-amount" id="pannel-amount"><br><br>
 
-        <label for="coverage-persentage">Coverage persentage: </label>
+        <label for="coverage-persentage">Schaduw persentage: </label>
         <input type="number" name="coverage-persentage" id="coverage-persentage" min="0" max="100"><br><br>
 
-        <button type="button" onclick="calculateWattage()">Calculate</button><br><br>
+        <button type="button" onclick="calculateWattage()">Bereken</button><br><br>
         
-        <label for="resultWattage">Wattage estimate: </label>
+        <label for="resultWattage">Wattage Schatting: </label>
 		<input type="text" id="resultWattage" name="result" readonly>
     </form>
 
