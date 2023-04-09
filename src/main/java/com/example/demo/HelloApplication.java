@@ -9,6 +9,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.net.URL;
 
 public class HelloApplication extends Application {
     @Override
@@ -20,8 +21,11 @@ public class HelloApplication extends Application {
 
         final WebEngine webEngine = webView.getEngine();
 
-        File f = new File("website/index.html");
-        webEngine.load(f.toURI().toString());
+        URL url = this.getClass().getResource("website/index.html");
+
+        webEngine.setJavaScriptEnabled(true);
+
+        webEngine.load(url.toString());
 
         root.getChildren().add(webView);
 
